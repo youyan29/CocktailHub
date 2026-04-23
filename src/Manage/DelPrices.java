@@ -1,0 +1,50 @@
+package Manage;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class DelPrices extends JFrame {
+    JPanel jPanel;
+    JList jListPrices;
+    JButton jButtonSubmit;
+    JLabel jLabelDel, jLabelTitle;
+    public DelPrices() throws HeadlessException { this("Delete Prices"); }
+    public DelPrices(String title) throws HeadlessException { super(title); initializeApp(); }
+    public void initializeApp() {
+        this.setBounds(600, 100, 400, 400);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        jPanel = new JPanel();
+        jPanel.setLayout(new MigLayout());
+        this.setContentPane(jPanel);
+
+        jLabelTitle = new JLabel();
+        jLabelTitle.setText("[ PRICES ] ");
+        jPanel.add(jLabelTitle, "wrap, align 50%, pushx");
+
+        jLabelDel = new JLabel();
+        jLabelDel.setText("Select To Delete:");
+        jPanel.add(jLabelDel, "pushx ,wrap, align 50%");
+
+        Data data = new Data();
+        jListPrices = new JList(data.listDataPrices());
+        jPanel.add(jListPrices, "pushx, align 50%, grow, wrap");
+
+        jButtonSubmit = new JButton();
+        jButtonSubmit.setText("Submit Delete");
+        jButtonSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object selectedList = jListPrices.getSelectedValue();
+                if (selectedList != null) {
+                    data.delPrices(String.valueOf(selectedList));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please Select To Delete !!");
+                }
+            }
+        });
+        jPanel.add(jButtonSubmit, "align 50%, center");
+        this.setVisible(true);
+    }
+}

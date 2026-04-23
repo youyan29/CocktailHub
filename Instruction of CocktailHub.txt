@@ -1,0 +1,134 @@
+Instruction File – CocktailHub from Machine not Learning
+1. Overview
+This system is a cocktail management and ordering application with a graphical user interface.
+It contains two main parts:
+Management System (for data operations)
+Ordering System (for customers)
+
+
+2. Project Setup (JAR Configuration)
+Before running the program, make sure the required JAR file is properly configured.
+Required Library: MigLayout
+This library is used for building the graphical user interface layout.
+The files that need to be configured include: miglayout-core-11.0.jar and miglayout-swing-11.0.jar
+
+Steps to Add the JAR File (Eclipse):
+Download the MigLayout JAR file (already provided in the project folder Miglayout)
+Right-click your project in Eclipse
+Select Build Path → Configure Build Path
+Go to the Libraries tab - Classpath
+Click Add External JARs
+Select two downloaded JAR files
+Go to the Order and Export tab
+Make sure the following JAR files are checked:
+	miglayout-core-xx.jar
+	miglayout-swing-xx.jar
+Click Apply and Close
+
+Common Errors:
+If the JAR file is not configured correctly, you may see:
+package net.miginfocom.swing does not exist
+cannot find symbol: MigLayout
+
+
+3. How to Run the Program
+Open the project in your Java IDE (e.g., Eclipse)
+Make sure the JAR file is added correctly
+Run the main class (e.g., Home.java)
+The main interface will appear
+
+
+4. Management System Instructions
+Display the base liquor, price, name, and flavor of the cocktail in the textarea at the center of the interface.
+
+4.1 Add Item
+Enter information of cocktail, price or flavour
+Click Add to create a new item
+
+4.2 Edit Item
+Select an item in checkbox
+Modify its information
+Save changes
+
+4.3 Delete Item
+Select an item
+Click Delete
+
+4.4 Sorting
+Items can be sorted (e.g., by price)
+
+4.5 Deleted Record Tracking
+The system can show the most recently deleted item
+
+4.6 Reload/Refresh
+Read the file and reset the current textarea
+
+
+5. Ordering System Instructions
+The items are sorted by default according to the first letter of the cocktail name from small to large
+
+5.1 View Menu
+The system displays a list of cocktails
+Each item shows its name and price
+Click the item name to view details (base liquor and flavour)
+
+5.2 Search Items
+Enter a keyword in the search box
+Click Search
+Matching items will be displayed
+
+5.3 Sort Items
+Click Sort Name to sort by name
+Click Sort Price to sort by price
+Click the button again, and the sorting will be reversed
+Sorting can switch between ascending and descending
+
+5.4 Add Items to Cart
+Click + to increase quantity
+Click - to decrease quantity
+Items are added to the cart
+
+5.5 View Bill
+Click Bill to open the bill page
+Selected items will be displayed in the textarea box above
+
+5.6 Place Order
+Click Order
+Items move to the ordered list
+
+5.7 Back to Menu
+Return to the menu interface
+
+5.7 Save Bill
+Click Record
+The bill is saved to a file
+Exiting the program and running it again will not affect the billing count
+
+5.8 Reset System
+Click Reset
+Clears search input
+Restores default menu (sorted by name)
+
+
+6. Notes
+Changes in the management system will appear in the ordering system after reloading
+The system uses file storage for saving data
+All functions are operated through the GUI
+
+
+7. Technologies Used
+Java
+Java Swing (GUI)
+List (ArrayList)
+Hashing (HashMap)
+Sorting (Merge Sort)
+Stack
+Recursion
+The Efficiency of Algorithm
+Generics
+File I/O
+
+8. Team Member
+Jiamin Jiang
+Jie Cui
+Yen-Chia Chiu
